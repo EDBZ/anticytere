@@ -9,9 +9,9 @@ setInterval(function() {
     aiguilleS[i].style.transition = 'transform ease 1s';
   }
   aiguilleS[0].style.transform = 'rotate(' + (moment().second()) * 6 + 'deg)';
-  if (moment().second()==0) {
-    aiguileS[0].removeAttribute='style';
-
+  if (moment().second()===0) {
+    // aiguileS[0].removeAttribute='style';
+    aiguileS[0].style.transitionProperty = 'none !important';
   }
   aiguilleS[1].style.transform = 'rotate(' + (moment().minute()) * 6 + 'deg)';
   aiguilleS[2].style.transform = 'rotate(' + (moment().hours()) * 6 + 'deg)';
