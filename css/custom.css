@@ -1,18 +1,88 @@
-.container{
+.container {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
-#time{
+#moniteur{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#time {
+  height: 6vw;
   margin: auto;
   font-size: 5vw;
 }
-#titre, #result,#phrase{
+#titre, #result, #phrase {
   margin: auto;
   font-size: 2vw;
+  height: 3vw;
 }
-button{
+button {
   margin: auto;
   width: 7vw;
+}
+#cadran {
+  margin: auto;
+  height: 279px;
+  width: 500px;
+  position: relative;
+  background-image: url("../images/cadran.png");
+}
+#aiguilleD {
+  height: 190px;
+  z-index: 5;
+}
+#aiguilleW {
+  height: 210px;
+  z-index: 4;
+}
+#aiguilleMM {
+  height: 234px;
+  z-index: 3;
+}
+#aiguilleM {
+  height: 250px;
+  z-index: 2
+}
+#cache{
+  position: absolute;
+  z-index: 10;
+  left: 200px;
+bottom: 0;
+  height: 50px;
+  width: 100px;
+}
+#horloge {
+  background-image: url("../images/horloge.gif");
+  background-size: contain;
+  position: relative;
+  height: 266.5px;
+  width: 283.5px;
+  margin: auto;
+}
+#aiguilleS {
+  top : 8px;
+  height: 125px;
+  z-index: 2;
+}
+#aiguillemin{
+  top:23px;
+  height: 110px;
+  z-index: 3;
+}
+#aiguilleH{
+  top:33px;
+  height: 100px;
+  z-index: 4;
+}
+.aiguilleHorloge{
+  left: 135px;
+  position: absolute;
+}
+.aiguille {
+  left: 247px;
+  bottom: 5px;
+  position: absolute;
 }
