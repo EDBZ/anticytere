@@ -9,13 +9,24 @@ setInterval(function() {
     aiguilleS[i].style.transition = 'transform ease 1s';
   }
   aiguilleS[0].style.transform = 'rotate(' + (moment().second()) * 6 + 'deg)';
-  if (moment().second()===0) {
-    // aiguileS[0].removeAttribute='style';
-    aiguileS[0].style.transitionProperty = 'none !important';
-  }
+  // if (moment().second()===0) {
+  //   // aiguileS[0].removeAttribute='style';
+  //   aiguileS[0].style.transitionProperty = 'none !important';
+  // }
   aiguilleS[1].style.transform = 'rotate(' + (moment().minute()) * 6 + 'deg)';
   aiguilleS[2].style.transform = 'rotate(' + (moment().hours()) * 6 + 'deg)';
 }, 1000);
+
+function astro(temps){
+ var terre_lune = document.getElementById('terre_lune');
+ var terre = document.getElementById('terre');
+ var lune = document.getElementById('lune');
+terre_lune.style.animationName = '';
+terre_lune.style.transform = 'rotate('+90+(parseInt(moment(temps).format('DDDD'))*0.9863)+'deg)';
+terre_lune.style.transition = 'transform ease 2s';
+terre.style.animationName = '';
+lune.style.animationName = '';
+};
 
 function faiguille(temps) {
   var aiguille = document.getElementsByClassName('aiguille');
@@ -41,6 +52,7 @@ function affich() {
   var hh = input.substr(11, 2);
   var min = input.substr(14, 2);
   var eng_input = moment(mm + '-' + dd + '-' + yy + ' ' + hh + ':' + min,'MM-DD-YYYY HH:mm');
+  astro(eng_input);
   console.log(yy);
   console.log(moment(eng_input).calendar());
   if (input != null) {
@@ -54,5 +66,6 @@ function affich() {
     document.getElementById('phrase').innerHTML = 'Prochain saros : ' + moment(saros).format('LL');
   };
 };
+
 document.getElementById('btn').addEventListener('click', affich);
 faiguille(actual_time);

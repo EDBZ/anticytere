@@ -1,88 +1,176 @@
 .container {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
-#moniteur{
+
+#moniteur {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 #time {
+  font-size: 5vw;
   height: 6vw;
   margin: auto;
-  font-size: 5vw;
 }
+
 #titre, #result, #phrase {
-  margin: auto;
   font-size: 2vw;
   height: 3vw;
+  margin: auto;
 }
+
 button {
-  margin: auto;
   width: 7vw;
-}
-#cadran {
   margin: auto;
-  height: 279px;
-  width: 500px;
+}
+
+#cadran {
   position: relative;
-  background-image: url("../images/cadran.png");
+  width: 500px;
+  height: 279px;
+  margin: auto;
+  background-image: url('../images/cadran.png');
 }
+
 #aiguilleD {
-  height: 190px;
   z-index: 5;
+  height: 190px;
 }
+
 #aiguilleW {
-  height: 210px;
   z-index: 4;
+  height: 210px;
 }
+
 #aiguilleMM {
-  height: 234px;
   z-index: 3;
+  height: 234px;
 }
+
 #aiguilleM {
+  z-index: 2;
   height: 250px;
-  z-index: 2
 }
-#cache{
+
+#cache {
   position: absolute;
   z-index: 10;
+  bottom: 0;
   left: 200px;
-bottom: 0;
-  height: 50px;
   width: 100px;
+  height: 50px;
 }
+
 #horloge {
-  background-image: url("../images/horloge.gif");
-  background-size: contain;
   position: relative;
-  height: 266.5px;
   width: 283.5px;
+  height: 266.5px;
+  margin: auto;
+  background-image: url('../images/horloge.gif');
+  background-size: contain;
+}
+
+#aiguilleS {
+  z-index: 2;
+  top: 8px;
+  height: 125px;
+}
+
+#aiguillemin {
+  z-index: 3;
+  top: 23px;
+  height: 110px;
+}
+
+#aiguilleH {
+  z-index: 4;
+  top: 53px;
+  height: 80px;
+}
+
+.aiguilleHorloge {
+  position: absolute;
+  left: 135px;
+}
+
+.aiguille {
+  position: absolute;
+  bottom: 5px;
+  left: 247px;
+}
+
+#astro {
+  position: relative;
+  display: flex;
+  width: 500px;
+  height: 500px;
+  margin: 50px auto;
+  background-image: url('../images/chemin_terre.png');
+}
+
+#soleil {
+  position: absolute;
+  z-index: 2;
+  top: 207px;
+  left: 207px;
+}
+
+#terre_lune {
+  position: absolute;
+  z-index: 3;
+  top: 178px;
+  left: -72px;
+  display: flex;
+  width: 144px;
+  height: 144px;
+  transform-origin: 322px 72px;
+  animation-name: spin;
+  animation-duration: 365.25s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  background-image: url('../images/chemin_lune.png');
+}
+
+#terre {
   margin: auto;
 }
-#aiguilleS {
-  top : 8px;
-  height: 125px;
-  z-index: 2;
-}
-#aiguillemin{
-  top:23px;
-  height: 110px;
-  z-index: 3;
-}
-#aiguilleH{
-  top:33px;
-  height: 100px;
+
+#lune {
+  position: absolute;
   z-index: 4;
+  top: 60px;
+  left: -12px;
+  width: 24px;
+  height: 24px;
+  transform-origin: 84px 12px;
+  animation-name: spin;
+  animation-duration: 27.3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
-.aiguilleHorloge{
-  left: 135px;
+
+#etoile {
   position: absolute;
+  z-index: 5;
+  top: 68px;
+  left: 89px;
+  transform-origin: -17px 4px;
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
-.aiguille {
-  left: 247px;
-  bottom: 5px;
-  position: absolute;
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
