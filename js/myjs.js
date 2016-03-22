@@ -17,15 +17,21 @@ setInterval(function() {
   aiguilleS[2].style.transform = 'rotate(' + (moment().hours()) * 6 + 'deg)';
 }, 1000);
 
-function astro(temps){
- var terre_lune = document.getElementById('terre_lune');
- var etoile = document.getElementById('etoile');
- var lune = document.getElementById('lune');
-terre_lune.style.animationName = 'none';
-terre_lune.style.transform = 'rotate('+(-270+(moment(temps).format('DDD')*-0.9863))+'deg)';
-terre_lune.style.transition = 'transform ease 2s';
-etoile.style.animationName = 'none';
-lune.style.animationName = 'none';
+function astro(temps) {
+  var pleine_lune = moment("03-23-2016","MM-DD-YYYY");
+  var terre_lune = document.getElementById('terre_lune');
+  var etoile = document.getElementById('etoile');
+  var lune = document.getElementById('lune');
+  var pos = (-270 + (moment(temps).format('DDD') * -0.9863));
+  terre_lune.style.animationName = 'none';
+  terre_lune.style.transform = 'rotate(' + pos + 'deg)';
+  terre_lune.style.transition = 'transform ease 5s';
+  etoile.style.animationName = 'none';
+  // lune.style.animationName = 'none';
+  // lune.style.transform = 'rotate(' + ((pleine_lune.diff(temps,'d')%29.573416)*12.4137) + 'deg)';
+  // lune.style.transition = 'transform ease 10s';
+  // console.log((pleine_lune.diff(temps,'d')%29.573416));
+
 };
 
 function faiguille(temps) {
@@ -51,7 +57,7 @@ function affich() {
   var yy = input.substr(6, 4);
   var hh = input.substr(11, 2);
   var min = input.substr(14, 2);
-  var eng_input = moment(mm + '-' + dd + '-' + yy + ' ' + hh + ':' + min,'MM-DD-YYYY HH:mm');
+  var eng_input = moment(mm + '-' + dd + '-' + yy + ' ' + hh + ':' + min, 'MM-DD-YYYY HH:mm');
   astro(eng_input);
   if (input != null) {
     faiguille(eng_input);
