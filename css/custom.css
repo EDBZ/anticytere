@@ -165,12 +165,12 @@ button {
   animation-iteration-count: infinite;
 }
 
-@keyframes spin {
+/*@keyframes spin {
   from {
     transform: rotate(0deg);
   }
 
   to {
-    transform: rotate(360deg);
+    transform: rotate(-360deg);
   }
-}
+}*/

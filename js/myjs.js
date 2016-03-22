@@ -19,13 +19,13 @@ setInterval(function() {
 
 function astro(temps){
  var terre_lune = document.getElementById('terre_lune');
- var terre = document.getElementById('terre');
+ var etoile = document.getElementById('etoile');
  var lune = document.getElementById('lune');
-terre_lune.style.animationName = '';
-terre_lune.style.transform = 'rotate('+90+(parseInt(moment(temps).format('DDDD'))*0.9863)+'deg)';
+terre_lune.style.animationName = 'none';
+terre_lune.style.transform = 'rotate('+(-270+(moment(temps).format('DDD')*-0.9863))+'deg)';
 terre_lune.style.transition = 'transform ease 2s';
-terre.style.animationName = '';
-lune.style.animationName = '';
+etoile.style.animationName = 'none';
+lune.style.animationName = 'none';
 };
 
 function faiguille(temps) {
@@ -53,8 +53,6 @@ function affich() {
   var min = input.substr(14, 2);
   var eng_input = moment(mm + '-' + dd + '-' + yy + ' ' + hh + ':' + min,'MM-DD-YYYY HH:mm');
   astro(eng_input);
-  console.log(yy);
-  console.log(moment(eng_input).calendar());
   if (input != null) {
     faiguille(eng_input);
     var result = moment(eng_input).format('LLLL');
@@ -69,3 +67,4 @@ function affich() {
 
 document.getElementById('btn').addEventListener('click', affich);
 faiguille(actual_time);
+// astro(actual_time);
